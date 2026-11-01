@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav, Footer } from "@/components/SiteChrome";
-import inkoni from "@/assets/inkoni.jpg";
+import festival from "@/assets/festival-presentation.jpg.asset.json";
+import festivalTeam from "@/assets/festival-team.jpg.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
