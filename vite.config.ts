@@ -12,4 +12,7 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Build the server for Netlify Functions (client assets go to dist/, server to .netlify/).
+  // Inside Lovable's own sandbox this is overridden with its Cloudflare target.
+  nitro: { preset: "netlify" },
 });
