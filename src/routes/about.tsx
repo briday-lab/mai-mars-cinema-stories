@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Nav, Footer } from "@/components/SiteChrome";
 import festival from "@/assets/festival-presentation.jpg.asset.json";
 import festivalTeam from "@/assets/festival-team.jpg.asset.json";
+import yvettePhoto from "@/assets/team/yvette-umukundwa.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -22,8 +23,17 @@ const pillars = [
 ];
 
 const producers = [
-  { name: "Producer Name", role: "Founder & Producer", bio: "A Montréal producer of Congolese heritage, developing auteur features through official co-production treaties between Canada, Africa and Europe. Alumni of major festival labs and markets." },
-  { name: "Producer Name", role: "Co-Producer", bio: "Specialist in international financing and festival strategy, bridging Canadian public funds with partners across the Global South." },
+  {
+    name: "Yvette Umukundwa",
+    role: "Founder & Producer",
+    photo: yvettePhoto,
+    bio: [
+      "Yvette Umukundwa is a Rwandan-born film producer based in Montréal, specializing in fiction and documentary. Passionate about African and diasporic stories, her work highlights the richness of cultures and human experiences.",
+      "She produced the documentary Scène de Rêve (2025), presented at the Vues d'Afrique Festival, and the short film Inkoni (2026), developed during Centre Phi's Voix Invisibles residency and selected for Orizon 9's Projections! distribution program. She is currently leading the development of the fiction feature Muntu (2027), written by Richard Mugwaneza.",
+      "Through her practice, Yvette aims to carry ambitious projects and build intercontinental bridges, with a particular focus on co-production opportunities and the circulation of works between Canada, the Global South and Africa.",
+    ],
+  },
+  { name: "Producer Name", role: "Co-Producer", photo: undefined, bio: ["Specialist in international financing and festival strategy, bridging Canadian public funds with partners across the Global South."] },
 ];
 
 function About() {
@@ -72,9 +82,14 @@ function About() {
         <div className="mt-12 grid gap-16 md:grid-cols-2">
           {producers.map((p, i) => (
             <div key={i}>
+              {p.photo && (
+                <img src={p.photo} alt={`Portrait of ${p.name}`} width={1584} height={1464} loading="lazy" className="mb-10 aspect-[4/5] w-full object-cover object-top" />
+              )}
               <h3 className="font-display text-4xl text-foreground">{p.name}</h3>
               <p className="eyebrow mt-3 text-muted-foreground">{p.role}</p>
-              <p className="mt-6 leading-relaxed text-muted-foreground">{p.bio}</p>
+              {p.bio.map((para, j) => (
+                <p key={j} className="mt-6 leading-relaxed text-muted-foreground">{para}</p>
+              ))}
             </div>
           ))}
         </div>
