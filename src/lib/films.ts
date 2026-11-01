@@ -19,9 +19,9 @@ export const films: Film[] = [
     title: "Muntu",
     status: "In Development",
     format: "Feature · Drama",
-    countries: "Canada · DR Congo",
+    countries: "Canada · Rwanda",
     logline:
-      "A herdsman returns to the land of his ancestors to bury his father, and finds the earth itself refusing to let him go.",
+      "Spanning three generations of a Rwandan family, a beaten child, a disillusioned mother, and an abandoned father navigate cycles of trauma.",
     image: muntu.url,
   },
   {
@@ -31,17 +31,17 @@ export const films: Film[] = [
     format: "Feature · Drama",
     countries: "Canada · South Africa",
     logline:
-      "An elder's carved staff passes between three generations, carrying a promise none of them chose to keep.",
+      "A boy escapes into a dreamscape shaped by his own chalk drawings.",
     image: inkoni.url,
   },
   {
     slug: "scene-de-reve",
     title: "Scène de Rêve",
-    status: "Financing",
-    format: "Feature · Musical Drama",
-    countries: "Canada · Senegal · France",
+    status: "Completed",
+    format: "Documentary · 24 min",
+    countries: "Canada",
     logline:
-      "In an abandoned Montreal theatre, a young Senegalese performer rehearses for a show that may only exist in her dreams.",
+      "The Afro-diasporic group Zunza chases its dream of the big stage at a prestigious Toronto festival, through the setbacks and small victories of emerging artists.",
     image: reve.url,
   },
 ];
