@@ -1,6 +1,6 @@
-import muntu from "@/assets/muntu.jpg";
-import inkoni from "@/assets/inkoni.jpg";
-import reve from "@/assets/scene-de-reve.jpg";
+import muntu from "@/assets/behind-the-scenes.jpg.asset.json";
+import inkoni from "@/assets/inkoni-still.jpg.asset.json";
+import reve from "@/assets/scene-de-reve-poster.webp.asset.json";
 
 export type Film = {
   slug: string;
@@ -22,7 +22,7 @@ export const films: Film[] = [
     countries: "Canada · DR Congo",
     logline:
       "A herdsman returns to the land of his ancestors to bury his father, and finds the earth itself refusing to let him go.",
-    image: muntu,
+    image: muntu.url,
   },
   {
     slug: "inkoni",
@@ -32,7 +32,7 @@ export const films: Film[] = [
     countries: "Canada · South Africa",
     logline:
       "An elder's carved staff passes between three generations, carrying a promise none of them chose to keep.",
-    image: inkoni,
+    image: inkoni.url,
   },
   {
     slug: "scene-de-reve",
@@ -42,6 +42,6 @@ export const films: Film[] = [
     countries: "Canada · Senegal · France",
     logline:
       "In an abandoned Montreal theatre, a young Senegalese performer rehearses for a show that may only exist in her dreams.",
-    image: reve,
+    image: reve.url,
   },
 ];

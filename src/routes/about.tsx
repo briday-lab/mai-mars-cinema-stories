@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav, Footer } from "@/components/SiteChrome";
-import inkoni from "@/assets/inkoni.jpg";
+import festival from "@/assets/festival-presentation.jpg.asset.json";
+import festivalTeam from "@/assets/festival-team.jpg.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -30,7 +31,7 @@ function About() {
     <div className="bg-background">
       <Nav />
       <section className="relative h-[70vh] min-h-[480px] overflow-hidden">
-        <img src={inkoni} alt="" width={1920} height={1088} className="absolute inset-0 h-full w-full object-cover opacity-60" />
+        <img src={festival.url} alt="Festival presentation at Vues d'Afrique, Montréal" width={1920} height={1088} className="absolute inset-0 h-full w-full object-cover opacity-60" />
         <div className="absolute inset-0 bg-[image:var(--gradient-veil)]" />
         <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-16 md:px-12">
           <p className="eyebrow text-primary">About us</p>
@@ -54,6 +55,16 @@ function About() {
             <p className="mt-4 text-muted-foreground">{p.d}</p>
           </div>
         ))}
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-28 md:px-12">
+        <p className="eyebrow text-primary">On the festival circuit</p>
+        <div className="mt-12 grid items-center gap-12 md:grid-cols-2">
+          <img src={festivalTeam.url} alt="The team at a festival screening" width={1920} height={1088} className="w-full object-cover" />
+          <p className="font-display text-2xl leading-relaxed text-foreground md:text-3xl">
+            Our films travel — from Montréal screens to festivals across Africa, Europe and the Americas.
+          </p>
+        </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-28 md:px-12">
