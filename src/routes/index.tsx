@@ -21,7 +21,7 @@ function Index() {
     const t = setInterval(() => setI((v) => (v + 1) % films.length), 6500);
     return () => clearInterval(t);
   }, []);
-  const f = films[i];
+  const f = films[i] ?? films[0]!;
 
   return (
     <div className="bg-background">
