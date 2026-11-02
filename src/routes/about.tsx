@@ -22,7 +22,7 @@ const pillars = [
 ];
 
 const producers = [
-  { name: "Yvette", role: "Producer", photo: undefined as string | undefined, bio: "A Montréal producer of Congolese heritage, developing auteur features through official co-production treaties between Canada, Africa and Europe. Alumni of major festival labs and markets." },
+  { name: "Yvette", role: "Producer", photo: "/team/yvette.jpg" as string | undefined, bio: "A Montréal producer of Congolese heritage, developing auteur features through official co-production treaties between Canada, Africa and Europe. Alumni of major festival labs and markets." },
   { name: "Richard", role: "Director", photo: "/team/richard.jpg" as string | undefined, bio: "Specialist in international financing and festival strategy, bridging Canadian public funds with partners across the Global South." },
 ];
 
