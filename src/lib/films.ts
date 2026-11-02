@@ -1,6 +1,6 @@
-import muntu from "@/assets/behind-the-scenes.jpg.asset.json";
-import inkoni from "@/assets/inkoni-still.jpg.asset.json";
-import reve from "@/assets/scene-de-reve-poster.webp.asset.json";
+const muntu = { url: "/images/behind-the-scenes.jpg" };
+const inkoni = { url: "/images/inkoni-still.jpg" };
+const reve = { url: "/images/scene-de-reve-poster.webp" };
 
 export type Film = {
   slug: string;
