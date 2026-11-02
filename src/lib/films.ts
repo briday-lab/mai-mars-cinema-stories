@@ -12,6 +12,7 @@ export type Film = Localized & {
   image: string;
   poster?: boolean; // portrait poster with text: shown whole, never cropped full-bleed
   vimeoId?: string; // add a Vimeo ID to embed the trailer
+  vimeoHash?: string; // privacy code from unlisted links (vimeo.com/<id>/<hash>)
 };
 
 const filmData: (Omit<Film, keyof Localized> & Record<Lang, Localized>)[] = [
@@ -65,6 +66,8 @@ const filmData: (Omit<Film, keyof Localized> & Record<Lang, Localized>)[] = [
     },
     image: reve.url,
     poster: true,
+    vimeoId: "1041135693",
+    vimeoHash: "afb21c8f99",
   },
 ];
 
