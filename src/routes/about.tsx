@@ -22,7 +22,7 @@ const pillars = [
 ];
 
 const producers = [
-  { name: "Producer Name", role: "Founder & Producer", bio: "A Montréal producer of Congolese heritage, developing auteur features through official co-production treaties between Canada, Africa and Europe. Alumni of major festival labs and markets." },
+  { name: "Yvette Umukundwa", role: "Founder & Producer", bio: "An independent producer of Rwandan origin based in Montreal, specializing in fiction and documentary. Passionate about African and diasporic narratives, her work highlights the richness of diverse cultures and human experiences. Dedicated to building intercontinental bridges, she actively focuses on international co-production and distribution opportunities between Canada, the Global South, and Africa. She is an alumna of the Voix Invisibles residency (Centre Phi) and Orizon 9's \"Projections!\" program." },
   { name: "Producer Name", role: "Co-Producer", bio: "Specialist in international financing and festival strategy, bridging Canadian public funds with partners across the Global South." },
 ];
 
