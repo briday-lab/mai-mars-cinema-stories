@@ -28,3 +28,7 @@ bun run dev
 ```
 
 Photos live in `public/images/` and are served directly by the site.
+
+## Languages
+
+The site is bilingual. English pages live at `/`, `/slate` and `/about`, and French pages at `/fr`, `/fr/slate` and `/fr/about`. All text is in `src/lib/i18n.ts`, and film details are in `src/lib/films.ts`; edit both languages there. The first time someone visits, a small edge function (`netlify/edge-functions/language-redirect.ts`) sends them to French if their browser prefers French. After that, the EN/FR toggle in the menu remembers their choice.

@@ -1,25 +1,33 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { films } from "@/lib/films";
+import { useFilms } from "@/lib/films";
+import { alternateLinks, dict, langFromParam, localeParam, useLang, useT } from "@/lib/i18n";
 import { Nav, Footer } from "@/components/SiteChrome";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Les Productions du Mai Mars — Auteur Cinema from Montréal" },
-      { name: "description", content: "Montreal production company crafting independent auteur cinema with African and diasporic roots, through international co-productions." },
-      { property: "og:title", content: "Les Productions du Mai Mars" },
-      { property: "og:description", content: "Independent auteur cinema with African and diasporic roots, produced from Montréal." },
-    ],
-  }),
+export const Route = createFileRoute("/{-$locale}/")({
+  head: ({ params }) => {
+    const t = dict[langFromParam(params.locale)];
+    return {
+      meta: [
+        { title: t.home.title },
+        { name: "description", content: t.home.description },
+        { property: "og:title", content: "Les Productions du Mai Mars" },
+        { property: "og:description", content: t.home.ogDescription },
+      ],
+      links: alternateLinks("/"),
+    };
+  },
   component: Index,
 });
 
 function Index() {
+  const t = useT();
+  const locale = localeParam(useLang());
+  const films = useFilms();
   const [i, setI] = useState(0);
   useEffect(() => {
-    const t = setInterval(() => setI((v) => (v + 1) % films.length), 6500);
-    return () => clearInterval(t);
+    const timer = setInterval(() => setI((v) => (v + 1) % films.length), 6500);
+    return () => clearInterval(timer);
   }, []);
   const f = films[i] ?? films[0]!;
 
@@ -54,12 +62,12 @@ function Index() {
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground">{f.logline}</p>
           <div className="mt-10 flex items-center gap-8">
-            <Link to="/slate" className="eyebrow border border-primary px-6 py-3 text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
-              View the slate
+            <Link to="/{-$locale}/slate" params={{ locale }} className="eyebrow border border-primary px-6 py-3 text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
+              {t.home.viewSlate}
             </Link>
             <div className="flex gap-3">
               {films.map((film, idx) => (
-                <button key={film.slug} aria-label={`Show ${film.title}`} onClick={() => setI(idx)}
+                <button key={film.slug} aria-label={t.home.show(film.title)} onClick={() => setI(idx)}
                   className={`h-px w-10 transition-colors ${idx === i ? "bg-primary" : "bg-muted-foreground/40"}`} />
               ))}
             </div>
@@ -70,9 +78,9 @@ function Index() {
       <section className="mx-auto max-w-4xl px-6 py-32 text-center md:py-48">
         <p className="eyebrow text-primary">Montréal · Kinshasa · Dakar · Johannesburg</p>
         <p className="mt-8 font-display text-3xl leading-snug text-foreground md:text-5xl">
-          We produce auteur cinema rooted in Africa and its diasporas — stories made across borders, for the world's screens.
+          {t.home.statement}
         </p>
-        <Link to="/about" className="eyebrow mt-12 inline-block text-muted-foreground hover:text-primary">About the company →</Link>
+        <Link to="/{-$locale}/about" params={{ locale }} className="eyebrow mt-12 inline-block text-muted-foreground hover:text-primary">{t.home.aboutLink}</Link>
       </section>
       <Footer />
     </div>

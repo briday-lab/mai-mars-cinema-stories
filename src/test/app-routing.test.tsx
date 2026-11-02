@@ -14,4 +14,20 @@ describe("App routing", () => {
 
     expect(matches.at(-1)?.routeId).not.toBe(rootRouteId);
   });
+
+  it.each([
+    ["/", "/{-$locale}/", undefined],
+    ["/slate", "/{-$locale}/slate", undefined],
+    ["/about", "/{-$locale}/about", undefined],
+    ["/fr", "/{-$locale}/", "fr"],
+    ["/fr/slate", "/{-$locale}/slate", "fr"],
+    ["/fr/about", "/{-$locale}/about", "fr"],
+  ])("matches %s to the right page and language", (path, routeId, locale) => {
+    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
+
+    const leaf = router.matchRoutes(path).at(-1);
+
+    expect(leaf?.routeId).toBe(routeId);
+    expect((leaf?.params as { locale?: string }).locale).toBe(locale);
+  });
 });

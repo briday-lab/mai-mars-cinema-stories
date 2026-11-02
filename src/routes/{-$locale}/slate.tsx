@@ -1,26 +1,33 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { films } from "@/lib/films";
+import { useFilms } from "@/lib/films";
+import { alternateLinks, dict, langFromParam, useT } from "@/lib/i18n";
 import { Nav, Footer } from "@/components/SiteChrome";
 
-export const Route = createFileRoute("/slate")({
-  head: () => ({
-    meta: [
-      { title: "Slate — Muntu, Inkoni, Scène de Rêve | Mai Mars" },
-      { name: "description", content: "Current slate of Les Productions du Mai Mars: Muntu, Inkoni and Scène de Rêve — loglines, status and trailers." },
-      { property: "og:title", content: "The Slate — Les Productions du Mai Mars" },
-      { property: "og:description", content: "Muntu, Inkoni and Scène de Rêve: our current feature films." },
-    ],
-  }),
+export const Route = createFileRoute("/{-$locale}/slate")({
+  head: ({ params }) => {
+    const t = dict[langFromParam(params.locale)];
+    return {
+      meta: [
+        { title: t.slate.title },
+        { name: "description", content: t.slate.description },
+        { property: "og:title", content: t.slate.ogTitle },
+        { property: "og:description", content: t.slate.ogDescription },
+      ],
+      links: alternateLinks("/slate"),
+    };
+  },
   component: Slate,
 });
 
 function Slate() {
+  const t = useT();
+  const films = useFilms();
   return (
     <div className="bg-background">
       <Nav />
       <header className="mx-auto max-w-7xl px-6 pb-16 pt-40 md:px-12">
-        <p className="eyebrow text-primary">Current slate</p>
-        <h1 className="mt-4 font-display text-5xl text-foreground md:text-7xl">Films</h1>
+        <p className="eyebrow text-primary">{t.slate.eyebrow}</p>
+        <h1 className="mt-4 font-display text-5xl text-foreground md:text-7xl">{t.slate.heading}</h1>
       </header>
       {films.map((f, idx) => (
         <article key={f.slug} className="mx-auto max-w-7xl border-t border-border px-6 py-20 md:px-12">
@@ -39,13 +46,13 @@ function Slate() {
                     className="absolute inset-0 h-full w-full"
                     allow="autoplay; fullscreen; picture-in-picture"
                     allowFullScreen
-                    title={`${f.title} trailer`}
+                    title={t.slate.trailerTitle(f.title)}
                   />
                 ) : (
                   <>
                     <img src={f.image} alt={f.title} loading="lazy" width={1920} height={1088} className={`h-full w-full ${f.poster ? "object-contain" : "object-cover"}`} />
                     <div className="absolute inset-0 flex items-end bg-gradient-to-t from-background/80 to-transparent p-6">
-                      <span className="eyebrow text-primary">Trailer coming soon</span>
+                      <span className="eyebrow text-primary">{t.slate.trailerSoon}</span>
                     </div>
                   </>
                 )}
