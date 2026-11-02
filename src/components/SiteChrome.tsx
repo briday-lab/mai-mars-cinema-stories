@@ -85,6 +85,11 @@ export function Footer() {
           {CONTACT_EMAIL}
         </a>
       </div>
+      <div className="mx-auto max-w-7xl border-t border-border/50 px-6 py-6 md:px-12">
+        <p className="text-xs tracking-wide text-muted-foreground/70">
+          {t.footer.copyright(new Date().getFullYear())}
+        </p>
+      </div>
     </footer>
   );
 }

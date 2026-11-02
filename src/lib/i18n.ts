@@ -45,7 +45,10 @@ const en = {
   switchTo: "FR",
   switchLabel: "Voir le site en français",
   nav: { home: "Home", slate: "Slate", about: "About", contact: "Contact" },
-  footer: { tagline: "Montréal, Québec · Auteur cinema, African & diasporic roots" },
+  footer: {
+    tagline: "Montréal, Québec · Auteur cinema, African & diasporic roots",
+    copyright: (year: number) => `© ${year} Mai Mars Productions. All rights reserved.`,
+  },
   root: {
     title: "Les Productions du Mai Mars",
     description:
@@ -154,7 +157,10 @@ const fr: typeof en = {
   switchTo: "EN",
   switchLabel: "View the site in English",
   nav: { home: "Accueil", slate: "Projets", about: "À propos", contact: "Contact" },
-  footer: { tagline: "Montréal, Québec · Cinéma d'auteur aux racines africaines et diasporiques" },
+  footer: {
+    tagline: "Montréal, Québec · Cinéma d'auteur aux racines africaines et diasporiques",
+    copyright: (year: number) => `© ${year} Les Productions du Mai Mars. Tous droits réservés.`,
+  },
   root: {
     title: "Les Productions du Mai Mars",
     description:
