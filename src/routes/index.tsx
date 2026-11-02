@@ -27,19 +27,28 @@ function Index() {
     <div className="bg-background">
       <Nav />
       <section className="relative h-screen min-h-[640px] overflow-hidden">
-        {films.map((film, idx) => (
-          <img
-            key={film.slug}
-            src={film.image}
-            alt={film.title}
-            width={1920}
-            height={1088}
-            className={`absolute inset-0 h-full w-full object-cover transition-all duration-[2000ms] ${idx === i ? "scale-105 opacity-100" : "scale-100 opacity-0"}`}
-          />
-        ))}
-        <div className="absolute inset-0 bg-[image:var(--gradient-veil)]" />
+        {films.map((film, idx) =>
+          film.poster ? (
+            <div
+              key={film.slug}
+              className={`absolute inset-x-0 bottom-[55%] top-24 flex justify-center px-6 transition-opacity duration-[2000ms] md:bottom-16 md:left-1/2 md:justify-end md:px-12 ${idx === i ? "opacity-100" : "opacity-0"}`}
+            >
+              <img src={film.image} alt={film.title} className="h-full w-auto object-contain shadow-2xl" />
+            </div>
+          ) : (
+            <img
+              key={film.slug}
+              src={film.image}
+              alt={film.title}
+              width={1920}
+              height={1088}
+              className={`absolute inset-0 h-full w-full object-cover transition-all duration-[2000ms] ${idx === i ? "scale-105 opacity-100" : "scale-100 opacity-0"}`}
+            />
+          ),
+        )}
+        <div className={`absolute inset-0 bg-[image:var(--gradient-veil)] transition-opacity duration-[2000ms] ${f.poster ? "opacity-0" : "opacity-100"}`} />
         <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-20 md:px-12">
-          <p className="eyebrow text-primary">{f.status} · {f.countries}</p>
+          <p className="eyebrow text-primary">{f.status}</p>
           <h1 key={f.slug} className="mt-4 animate-in fade-in slide-in-from-bottom-4 font-display text-6xl leading-none text-foreground duration-1000 md:text-9xl">
             {f.title}
           </h1>

@@ -7,9 +7,9 @@ export type Film = {
   title: string;
   status: string;
   format: string;
-  countries: string;
   logline: string;
   image: string;
+  poster?: boolean; // portrait poster with text: shown whole, never cropped full-bleed
   vimeoId?: string; // add a Vimeo ID to embed the trailer
 };
 
@@ -17,9 +17,8 @@ export const films: Film[] = [
   {
     slug: "muntu",
     title: "Muntu",
-    status: "In Development",
+    status: "Development",
     format: "Feature · Drama",
-    countries: "Canada · Rwanda",
     logline:
       "Spanning three generations of a Rwandan family, a beaten child, a disillusioned mother, and an abandoned father navigate cycles of trauma.",
     image: muntu.url,
@@ -29,7 +28,6 @@ export const films: Film[] = [
     title: "Inkoni",
     status: "Post-Production",
     format: "Feature · Drama",
-    countries: "Canada · South Africa",
     logline:
       "A boy escapes into a dreamscape shaped by his own chalk drawings.",
     image: inkoni.url,
@@ -37,11 +35,11 @@ export const films: Film[] = [
   {
     slug: "scene-de-reve",
     title: "Scène de Rêve",
-    status: "Completed",
+    status: "40th Vues d'Afrique",
     format: "Documentary · 24 min",
-    countries: "Canada",
     logline:
       "The Afro-diasporic group Zunza chases its dream of the big stage at a prestigious Toronto festival, through the setbacks and small victories of emerging artists.",
     image: reve.url,
+    poster: true,
   },
 ];

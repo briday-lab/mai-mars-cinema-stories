@@ -23,7 +23,7 @@ const pillars = [
 
 const producers = [
   { name: "Yvette Umukundwa", role: "Founder & Producer", bio: "An independent producer of Rwandan origin based in Montreal, specializing in fiction and documentary. Passionate about African and diasporic narratives, her work highlights the richness of diverse cultures and human experiences. Dedicated to building intercontinental bridges, she actively focuses on international co-production and distribution opportunities between Canada, the Global South, and Africa. She is an alumna of the Voix Invisibles residency (Centre Phi) and Orizon 9's \"Projections!\" program." },
-  { name: "Producer Name", role: "Co-Producer", bio: "Specialist in international financing and festival strategy, bridging Canadian public funds with partners across the Global South." },
+  { name: "Richard Mugwaneza", role: "Co-Founder & Director", bio: "An award-winning Rwandan filmmaker based in Montreal with over 15 years of experience crafting powerful independent cinema. His work blends poetic visual imagery with raw emotional depth to uncover invisible inner worlds. An alumnus of elite global incubators including Berlinale Talents, L’INIS, Durban Talents, and the Maisha Screenwriting Labs, Richard was mentored by Oscar-nominated director Lee Isaac Chung. He is a laureate of the prestigious \"Fonds Jeune Création Francophone.\"" },
 ];
 
 function About() {

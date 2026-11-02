@@ -29,7 +29,6 @@ function Slate() {
               <p className="eyebrow text-muted-foreground">0{idx + 1} — {f.status}</p>
               <h2 className="mt-4 font-display text-5xl text-foreground md:text-6xl">{f.title}</h2>
               <p className="eyebrow mt-6 text-primary">{f.format}</p>
-              <p className="mt-1 text-sm text-muted-foreground">{f.countries}</p>
               <p className="mt-8 font-display text-xl italic leading-relaxed text-foreground/90">"{f.logline}"</p>
             </div>
             <div className="md:col-span-8">
@@ -44,7 +43,7 @@ function Slate() {
                   />
                 ) : (
                   <>
-                    <img src={f.image} alt={f.title} loading="lazy" width={1920} height={1088} className="h-full w-full object-cover" />
+                    <img src={f.image} alt={f.title} loading="lazy" width={1920} height={1088} className={`h-full w-full ${f.poster ? "object-contain" : "object-cover"}`} />
                     <div className="absolute inset-0 flex items-end bg-gradient-to-t from-background/80 to-transparent p-6">
                       <span className="eyebrow text-primary">Trailer coming soon</span>
                     </div>
