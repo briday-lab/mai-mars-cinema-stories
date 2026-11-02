@@ -26,7 +26,7 @@ export function Footer() {
           <p className="font-display text-2xl text-foreground">Les Productions du Mai Mars</p>
           <p className="mt-2 text-sm text-muted-foreground">Montréal, Québec · Auteur cinema, African & diasporic roots</p>
         </div>
-        <a href="mailto:info@maimars.ca" className="eyebrow text-primary hover:text-foreground">info@maimars.ca</a>
+        <a href="mailto:production.maimars@gmail.com" className="eyebrow text-primary hover:text-foreground">production.maimars@gmail.com</a>
       </div>
     </footer>
   );

@@ -22,8 +22,8 @@ const pillars = [
 ];
 
 const producers = [
-  { name: "Producer Name", role: "Founder & Producer", bio: "A Montréal producer of Congolese heritage, developing auteur features through official co-production treaties between Canada, Africa and Europe. Alumni of major festival labs and markets." },
-  { name: "Producer Name", role: "Co-Producer", bio: "Specialist in international financing and festival strategy, bridging Canadian public funds with partners across the Global South." },
+  { name: "Yvette", role: "Producer", photo: "/team/yvette.jpg" as string | undefined, bio: "A Montréal producer of Congolese heritage, developing auteur features through official co-production treaties between Canada, Africa and Europe. Alumni of major festival labs and markets." },
+  { name: "Richard", role: "Director", photo: "/team/richard.jpg" as string | undefined, bio: "Specialist in international financing and festival strategy, bridging Canadian public funds with partners across the Global South." },
 ];
 
 function About() {
@@ -72,6 +72,13 @@ function About() {
         <div className="mt-12 grid gap-16 md:grid-cols-2">
           {producers.map((p, i) => (
             <div key={i}>
+              <div className="mb-8 aspect-[4/5] w-full max-w-sm overflow-hidden bg-muted">
+                {p.photo ? (
+                  <img src={p.photo} alt={`${p.name}, ${p.role}`} loading="lazy" className="h-full w-full object-cover object-top" />
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center font-display text-8xl text-primary/60">{p.name[0]}</div>
+                )}
+              </div>
               <h3 className="font-display text-4xl text-foreground">{p.name}</h3>
               <p className="eyebrow mt-3 text-muted-foreground">{p.role}</p>
               <p className="mt-6 leading-relaxed text-muted-foreground">{p.bio}</p>
