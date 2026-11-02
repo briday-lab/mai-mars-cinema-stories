@@ -38,5 +38,5 @@ function preferredLang(header: string | null): "en" | "fr" | undefined {
 
 // English pages only; keep in sync with src/routes/{-$locale}/.
 export const config: Config = {
-  path: ["/", "/slate", "/about"],
+  path: ["/", "/slate", "/about", "/contact"],
 };

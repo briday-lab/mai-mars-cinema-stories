@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as Char123LocaleChar125RouteRouteImport } from './routes/{-$locale}/route'
 import { Route as Char123LocaleChar125IndexRouteImport } from './routes/{-$locale}/index'
 import { Route as Char123LocaleChar125AboutRouteImport } from './routes/{-$locale}/about'
+import { Route as Char123LocaleChar125ContactRouteImport } from './routes/{-$locale}/contact'
 import { Route as Char123LocaleChar125SlateRouteImport } from './routes/{-$locale}/slate'
 
 const Char123LocaleChar125RouteRoute =
@@ -32,6 +33,12 @@ const Char123LocaleChar125AboutRoute =
     path: '/about',
     getParentRoute: () => Char123LocaleChar125RouteRoute,
   } as any)
+const Char123LocaleChar125ContactRoute =
+  Char123LocaleChar125ContactRouteImport.update({
+    id: '/contact',
+    path: '/contact',
+    getParentRoute: () => Char123LocaleChar125RouteRoute,
+  } as any)
 const Char123LocaleChar125SlateRoute =
   Char123LocaleChar125SlateRouteImport.update({
     id: '/slate',
@@ -42,11 +49,13 @@ const Char123LocaleChar125SlateRoute =
 export interface FileRoutesByFullPath {
   '/{-$locale}': typeof Char123LocaleChar125RouteRouteWithChildren
   '/{-$locale}/about': typeof Char123LocaleChar125AboutRoute
+  '/{-$locale}/contact': typeof Char123LocaleChar125ContactRoute
   '/{-$locale}/slate': typeof Char123LocaleChar125SlateRoute
   '/{-$locale}/': typeof Char123LocaleChar125IndexRoute
 }
 export interface FileRoutesByTo {
   '/{-$locale}/about': typeof Char123LocaleChar125AboutRoute
+  '/{-$locale}/contact': typeof Char123LocaleChar125ContactRoute
   '/{-$locale}/slate': typeof Char123LocaleChar125SlateRoute
   '/{-$locale}': typeof Char123LocaleChar125IndexRoute
 }
@@ -54,19 +63,29 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/{-$locale}': typeof Char123LocaleChar125RouteRouteWithChildren
   '/{-$locale}/about': typeof Char123LocaleChar125AboutRoute
+  '/{-$locale}/contact': typeof Char123LocaleChar125ContactRoute
   '/{-$locale}/slate': typeof Char123LocaleChar125SlateRoute
   '/{-$locale}/': typeof Char123LocaleChar125IndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/{-$locale}' | '/{-$locale}/about' | '/{-$locale}/slate' | '/{-$locale}/'
+    | '/{-$locale}'
+    | '/{-$locale}/about'
+    | '/{-$locale}/contact'
+    | '/{-$locale}/slate'
+    | '/{-$locale}/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/{-$locale}/about' | '/{-$locale}/slate' | '/{-$locale}'
+  to:
+    | '/{-$locale}/about'
+    | '/{-$locale}/contact'
+    | '/{-$locale}/slate'
+    | '/{-$locale}'
   id:
     | '__root__'
     | '/{-$locale}'
     | '/{-$locale}/about'
+    | '/{-$locale}/contact'
     | '/{-$locale}/slate'
     | '/{-$locale}/'
   fileRoutesById: FileRoutesById
@@ -98,6 +117,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Char123LocaleChar125AboutRouteImport
       parentRoute: typeof Char123LocaleChar125RouteRoute
     }
+    '/{-$locale}/contact': {
+      id: '/{-$locale}/contact'
+      path: '/contact'
+      fullPath: '/{-$locale}/contact'
+      preLoaderRoute: typeof Char123LocaleChar125ContactRouteImport
+      parentRoute: typeof Char123LocaleChar125RouteRoute
+    }
     '/{-$locale}/slate': {
       id: '/{-$locale}/slate'
       path: '/slate'
@@ -110,6 +136,7 @@ declare module '@tanstack/react-router' {
 
 interface Char123LocaleChar125RouteRouteChildren {
   Char123LocaleChar125AboutRoute: typeof Char123LocaleChar125AboutRoute
+  Char123LocaleChar125ContactRoute: typeof Char123LocaleChar125ContactRoute
   Char123LocaleChar125SlateRoute: typeof Char123LocaleChar125SlateRoute
   Char123LocaleChar125IndexRoute: typeof Char123LocaleChar125IndexRoute
 }
@@ -117,6 +144,7 @@ interface Char123LocaleChar125RouteRouteChildren {
 const Char123LocaleChar125RouteRouteChildren: Char123LocaleChar125RouteRouteChildren =
   {
     Char123LocaleChar125AboutRoute: Char123LocaleChar125AboutRoute,
+    Char123LocaleChar125ContactRoute: Char123LocaleChar125ContactRoute,
     Char123LocaleChar125SlateRoute: Char123LocaleChar125SlateRoute,
     Char123LocaleChar125IndexRoute: Char123LocaleChar125IndexRoute,
   }

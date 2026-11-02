@@ -44,7 +44,7 @@ const en = {
   langName: "English",
   switchTo: "FR",
   switchLabel: "Voir le site en français",
-  nav: { home: "Home", slate: "Slate", about: "About" },
+  nav: { home: "Home", slate: "Slate", about: "About", contact: "Contact" },
   footer: { tagline: "Montréal, Québec · Auteur cinema, African & diasporic roots" },
   root: {
     title: "Les Productions du Mai Mars",
@@ -125,13 +125,33 @@ const en = {
       },
     ],
   },
+  contact: {
+    title: "Contact — Les Productions du Mai Mars",
+    description:
+      "Get in touch with Les Productions du Mai Mars about co-productions, festival programming, financing or press.",
+    eyebrow: "Contact",
+    heading: "Let's talk cinema.",
+    intro:
+      "For co-production, festival programming, financing or press enquiries, write to us and we'll get back to you.",
+    name: "Name",
+    email: "Email",
+    organization: "Organization (optional)",
+    message: "Message",
+    send: "Send message",
+    sending: "Sending…",
+    sent: "Thank you — your message has been sent. We'll be in touch soon.",
+    sendAnother: "Send another message",
+    failed: "Your message couldn't be sent. Please try again, or email us directly at",
+    orEmail: "Or email us directly",
+    subject: "New message from the Mai Mars website",
+  },
 };
 
 const fr: typeof en = {
   langName: "Français",
   switchTo: "EN",
   switchLabel: "View the site in English",
-  nav: { home: "Accueil", slate: "Projets", about: "À propos" },
+  nav: { home: "Accueil", slate: "Projets", about: "À propos", contact: "Contact" },
   footer: { tagline: "Montréal, Québec · Cinéma d'auteur aux racines africaines et diasporiques" },
   root: {
     title: "Les Productions du Mai Mars",
@@ -213,6 +233,28 @@ const fr: typeof en = {
       },
     ],
   },
+  contact: {
+    title: "Contact — Les Productions du Mai Mars",
+    description:
+      "Joignez Les Productions du Mai Mars pour une coproduction, une programmation en festival, du financement ou une demande de presse.",
+    eyebrow: "Contact",
+    heading: "Parlons cinéma.",
+    intro:
+      "Pour une coproduction, une programmation en festival, du financement ou une demande de presse, écrivez-nous et nous vous répondrons rapidement.",
+    name: "Nom",
+    email: "Courriel",
+    organization: "Organisation (facultatif)",
+    message: "Message",
+    send: "Envoyer le message",
+    sending: "Envoi en cours…",
+    sent: "Merci — votre message a bien été envoyé. Nous vous répondrons sous peu.",
+    sendAnother: "Envoyer un autre message",
+    failed: "Votre message n'a pas pu être envoyé. Veuillez réessayer ou nous écrire directement à",
+    orEmail: "Ou écrivez-nous directement",
+    subject: "Nouveau message du site Mai Mars",
+  },
 };
 
 export const dict = { en, fr };
+
+export const CONTACT_EMAIL = "production.maimars@gmail.com";

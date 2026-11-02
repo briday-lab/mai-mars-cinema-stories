@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { localeParam, rememberLang, useLang, useT } from "@/lib/i18n";
+import { CONTACT_EMAIL, localeParam, rememberLang, useLang, useT } from "@/lib/i18n";
 
 export function Nav() {
   const t = useT();
@@ -17,11 +17,11 @@ export function Nav() {
         >
           Mai Mars
         </Link>
-        <div className="flex items-center gap-6 md:gap-10">
+        <div className="flex items-center gap-4 sm:gap-6 md:gap-10">
           <Link
             to="/{-$locale}"
             params={{ locale }}
-            className={link}
+            className={`${link} hidden sm:inline`}
             activeOptions={{ exact: true }}
             activeProps={{ className: "text-primary" }}
           >
@@ -42,6 +42,14 @@ export function Nav() {
             activeProps={{ className: "text-primary" }}
           >
             {t.nav.about}
+          </Link>
+          <Link
+            to="/{-$locale}/contact"
+            params={{ locale }}
+            className={link}
+            activeProps={{ className: "text-primary" }}
+          >
+            {t.nav.contact}
           </Link>
           <Link
             to="."
@@ -73,8 +81,8 @@ export function Footer() {
           <p className="font-display text-2xl text-foreground">Les Productions du Mai Mars</p>
           <p className="mt-2 text-sm text-muted-foreground">{t.footer.tagline}</p>
         </div>
-        <a href="mailto:info@maimars.ca" className="eyebrow text-primary hover:text-foreground">
-          info@maimars.ca
+        <a href={`mailto:${CONTACT_EMAIL}`} className="eyebrow text-primary hover:text-foreground">
+          {CONTACT_EMAIL}
         </a>
       </div>
     </footer>

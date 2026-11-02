@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <body>
+    <!-- Static copy of the contact form in src/routes/{-$locale}/contact.tsx so Netlify Forms
+         registers it at deploy time. Field names must match the rendered form exactly. -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="subject" />
+      <input type="hidden" name="language" />
+      <input name="bot-field" />
+      <input name="name" type="text" />
+      <input name="email" type="email" />
+      <input name="organization" type="text" />
+      <textarea name="message"></textarea>
+    </form>
+  </body>
+</html>

@@ -22,6 +22,8 @@ describe("App routing", () => {
     ["/fr", "/{-$locale}/", "fr"],
     ["/fr/slate", "/{-$locale}/slate", "fr"],
     ["/fr/about", "/{-$locale}/about", "fr"],
+    ["/contact", "/{-$locale}/contact", undefined],
+    ["/fr/contact", "/{-$locale}/contact", "fr"],
   ])("matches %s to the right page and language", (path, routeId, locale) => {
     const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
 
