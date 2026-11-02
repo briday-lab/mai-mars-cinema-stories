@@ -39,12 +39,12 @@ const filmData: (Omit<Film, keyof Localized> & Record<Lang, Localized>)[] = [
     title: "Inkoni",
     en: {
       status: "Post-Production",
-      format: "Feature · Drama",
+      format: "Short · Drama",
       logline: "A boy escapes into a dreamscape shaped by his own chalk drawings.",
     },
     fr: {
       status: "Postproduction",
-      format: "Long métrage · Drame",
+      format: "Court métrage · Drame",
       logline:
         "Un garçon s'évade dans un monde onirique façonné par ses propres dessins à la craie.",
     },

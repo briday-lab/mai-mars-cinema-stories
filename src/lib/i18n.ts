@@ -75,7 +75,7 @@ const en = {
     description:
       "Current slate of Les Productions du Mai Mars: Muntu, Inkoni and Scène de Rêve — loglines, status and trailers.",
     ogTitle: "The Slate — Les Productions du Mai Mars",
-    ogDescription: "Muntu, Inkoni and Scène de Rêve: our current feature films.",
+    ogDescription: "Muntu, Inkoni and Scène de Rêve: our current films.",
     eyebrow: "Current slate",
     heading: "Films",
     trailerSoon: "Trailer coming soon",
