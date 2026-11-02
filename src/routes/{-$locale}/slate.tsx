@@ -3,6 +3,7 @@ import { useFilms } from "@/lib/films";
 import { alternateLinks, dict, langFromParam, useT } from "@/lib/i18n";
 import { Nav, Footer } from "@/components/SiteChrome";
 import { FilmMedia } from "@/components/FilmMedia";
+import { FilmStatus } from "@/components/FilmStatus";
 
 export const Route = createFileRoute("/{-$locale}/slate")({
   head: ({ params }) => {
@@ -39,9 +40,11 @@ function Slate() {
         >
           <div className="grid gap-12 md:grid-cols-12">
             <div className="md:col-span-4">
-              <p className="eyebrow text-muted-foreground">
-                0{idx + 1} — {f.status}
-              </p>
+              <FilmStatus
+                film={f}
+                prefix={`0${idx + 1} — `}
+                className="eyebrow text-muted-foreground"
+              />
               <h2 className="mt-4 font-display text-5xl text-foreground md:text-6xl">{f.title}</h2>
               <p className="eyebrow mt-6 text-primary">{f.format}</p>
               <p className="mt-8 font-display text-xl italic leading-relaxed text-foreground/90">

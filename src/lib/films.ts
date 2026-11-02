@@ -11,6 +11,7 @@ export type Film = Localized & {
   title: string;
   image: string;
   poster?: boolean; // portrait poster with text: shown whole, never cropped full-bleed
+  festivalLogo?: { src: string; alt: string }; // small logo shown next to the status
   vimeoId?: string; // add a Vimeo ID to embed the trailer
   vimeoHash?: string; // privacy code from unlisted links (vimeo.com/<id>/<hash>)
 };
@@ -53,19 +54,20 @@ const filmData: (Omit<Film, keyof Localized> & Record<Lang, Localized>)[] = [
     slug: "scene-de-reve",
     title: "Scène de Rêve",
     en: {
-      status: "40th Vues d'Afrique",
+      status: "41st Vues d'Afrique",
       format: "Documentary · 24 min",
       logline:
         "The Afro-diasporic group Zunza chases its dream of the big stage at a prestigious Toronto festival, through the setbacks and small victories of emerging artists.",
     },
     fr: {
-      status: "40e Vues d'Afrique",
+      status: "41e Vues d'Afrique",
       format: "Documentaire · 24 min",
       logline:
         "Le groupe afrodiasporique Zunza poursuit son rêve de grande scène dans un prestigieux festival torontois, entre revers et petites victoires d'artistes émergents.",
     },
     image: reve.url,
     poster: true,
+    festivalLogo: { src: "/images/vues-dafrique-logo.png", alt: "Vues d'Afrique" },
     vimeoId: "1041135693",
     vimeoHash: "afb21c8f99",
   },
