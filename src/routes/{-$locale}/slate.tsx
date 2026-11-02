@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useFilms } from "@/lib/films";
 import { alternateLinks, dict, langFromParam, useT } from "@/lib/i18n";
 import { Nav, Footer } from "@/components/SiteChrome";
+import { FilmMedia } from "@/components/FilmMedia";
 
 export const Route = createFileRoute("/{-$locale}/slate")({
   head: ({ params }) => {
@@ -48,31 +49,7 @@ function Slate() {
               </p>
             </div>
             <div className="md:col-span-8">
-              <div className="relative aspect-video overflow-hidden bg-card">
-                {f.vimeoId ? (
-                  <iframe
-                    src={`https://player.vimeo.com/video/${f.vimeoId}?${f.vimeoHash ? `h=${f.vimeoHash}&` : ""}title=0&byline=0&portrait=0`}
-                    className="absolute inset-0 h-full w-full"
-                    allow="autoplay; fullscreen; picture-in-picture"
-                    allowFullScreen
-                    title={t.slate.trailerTitle(f.title)}
-                  />
-                ) : (
-                  <>
-                    <img
-                      src={f.image}
-                      alt={f.title}
-                      loading="lazy"
-                      width={1920}
-                      height={1088}
-                      className={`h-full w-full ${f.poster ? "object-contain" : "object-cover"}`}
-                    />
-                    <div className="absolute inset-0 flex items-end bg-gradient-to-t from-background/80 to-transparent p-6">
-                      <span className="eyebrow text-primary">{t.slate.trailerSoon}</span>
-                    </div>
-                  </>
-                )}
-              </div>
+              <FilmMedia film={f} />
             </div>
           </div>
         </article>

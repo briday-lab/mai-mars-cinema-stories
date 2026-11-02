@@ -79,6 +79,7 @@ const en = {
     eyebrow: "Current slate",
     heading: "Films",
     trailerSoon: "Trailer coming soon",
+    watchTrailer: "Watch the trailer",
     trailerTitle: (title: string) => `${title} trailer`,
   },
   about: {
@@ -188,6 +189,7 @@ const fr: typeof en = {
     eyebrow: "Projets en cours",
     heading: "Films",
     trailerSoon: "Bande-annonce à venir",
+    watchTrailer: "Voir la bande-annonce",
     trailerTitle: (title: string) => `Bande-annonce de ${title}`,
   },
   about: {
