@@ -1,0 +1,63 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { useFilms } from "@/lib/films";
+import { alternateLinks, dict, langFromParam, useT } from "@/lib/i18n";
+import { Nav, Footer } from "@/components/SiteChrome";
+import { FilmMedia } from "@/components/FilmMedia";
+import { FilmStatus } from "@/components/FilmStatus";
+
+export const Route = createFileRoute("/{-$locale}/slate")({
+  head: ({ params }) => {
+    const t = dict[langFromParam(params.locale)];
+    return {
+      meta: [
+        { title: t.slate.title },
+        { name: "description", content: t.slate.description },
+        { property: "og:title", content: t.slate.ogTitle },
+        { property: "og:description", content: t.slate.ogDescription },
+      ],
+      links: alternateLinks("/slate"),
+    };
+  },
+  component: Slate,
+});
+
+function Slate() {
+  const t = useT();
+  const films = useFilms();
+  return (
+    <div className="bg-background">
+      <Nav />
+      <header className="mx-auto max-w-7xl px-6 pb-16 pt-40 md:px-12">
+        <p className="eyebrow text-primary">{t.slate.eyebrow}</p>
+        <h1 className="mt-4 font-display text-5xl text-foreground md:text-7xl">
+          {t.slate.heading}
+        </h1>
+      </header>
+      {films.map((f, idx) => (
+        <article
+          key={f.slug}
+          className="mx-auto max-w-7xl border-t border-border px-6 py-20 md:px-12"
+        >
+          <div className="grid gap-12 md:grid-cols-12">
+            <div className="md:col-span-4">
+              <FilmStatus
+                film={f}
+                prefix={`0${idx + 1} — `}
+                className="eyebrow text-muted-foreground"
+              />
+              <h2 className="mt-4 font-display text-5xl text-foreground md:text-6xl">{f.title}</h2>
+              <p className="eyebrow mt-6 text-primary">{f.format}</p>
+              <p className="mt-8 font-display text-xl italic leading-relaxed text-foreground/90">
+                "{f.logline}"
+              </p>
+            </div>
+            <div className="md:col-span-8">
+              <FilmMedia film={f} />
+            </div>
+          </div>
+        </article>
+      ))}
+      <Footer />
+    </div>
+  );
+}

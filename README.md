@@ -14,25 +14,21 @@ A 'Projects' or 'Slate' page featuring our current films (Muntu, Inkoni, and ScÃ
 
 An 'About Us' section highlighting our focus on international co-productions between Canada, the Global South, and Africa, including a brief bio for the producers.
 
-This project was built with [Lovable](https://lovable.dev).
+## Hosting
 
-**Live app**: https://mai-mars-cinema-stories.lovable.app
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/e1274a48-33e3-4f98-9140-a2376ee4acde).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+The site is hosted on Netlify at https://maimars.com. Every push to `main` deploys to production automatically; pull requests get a preview deploy.
 
 ## Development
 
-Prefer working locally? You need Node.js and npm â€” [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+You need [Bun](https://bun.sh) (or Node.js and npm).
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+bun install
+bun run dev
 ```
+
+Photos live in `public/images/` and are served directly by the site.
+
+## Languages
+
+The site is bilingual. English pages live at `/`, `/slate` and `/about`, and French pages at `/fr`, `/fr/slate` and `/fr/about`. All text is in `src/lib/i18n.ts`, and film details are in `src/lib/films.ts`; edit both languages there. The first time someone visits, a small edge function (`netlify/edge-functions/language-redirect.ts`) sends them to French if their browser prefers French. After that, the EN/FR toggle in the menu remembers their choice.
