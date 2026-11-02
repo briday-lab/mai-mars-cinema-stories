@@ -63,6 +63,7 @@ const en = {
       "Montreal production company crafting independent auteur cinema with African and diasporic roots, through international co-productions.",
     ogDescription:
       "Independent auteur cinema with African and diasporic roots, produced from Montréal.",
+    regions: "North America · Africa",
     viewSlate: "View the slate",
     show: (title: string) => `Show ${title}`,
     statement:
@@ -116,7 +117,7 @@ const en = {
       {
         name: "Yvette Umukundwa",
         role: "Founder & Producer",
-        bio: 'An independent producer of Rwandan origin based in Montreal, specializing in fiction and documentary. Passionate about African and diasporic narratives, her work highlights the richness of diverse cultures and human experiences. Dedicated to building intercontinental bridges, she actively focuses on international co-production and distribution opportunities between Canada, the Global South, and Africa. She is an alumna of the Voix Invisibles residency (Centre Phi) and Orizon 9\'s "Projections!" program.',
+        bio: 'An independent producer of Rwandan origin based in Montreal, specializing in fiction and documentary. Passionate about African and diasporic narratives, her work highlights the richness of diverse cultures and human experiences. Dedicated to building intercontinental bridges, she actively focuses on international co-production and distribution opportunities between Canada, the Global South, and Africa. She is an alumna of Orizon 9\'s "Projections!" program.',
       },
       {
         name: "Richard Mugwaneza",
@@ -171,6 +172,7 @@ const fr: typeof en = {
       "Maison de production montréalaise qui crée un cinéma d'auteur indépendant aux racines africaines et diasporiques, par la coproduction internationale.",
     ogDescription:
       "Un cinéma d'auteur indépendant aux racines africaines et diasporiques, produit à Montréal.",
+    regions: "Amérique du Nord · Afrique",
     viewSlate: "Voir les projets",
     show: (title: string) => `Afficher ${title}`,
     statement:
@@ -224,7 +226,7 @@ const fr: typeof en = {
       {
         name: "Yvette Umukundwa",
         role: "Fondatrice et productrice",
-        bio: "Productrice indépendante d'origine rwandaise établie à Montréal, elle se spécialise en fiction et en documentaire. Passionnée par les récits africains et diasporiques, elle met en lumière, à travers son travail, la richesse des cultures et des expériences humaines. Résolue à bâtir des ponts entre les continents, elle se consacre activement aux occasions de coproduction et de distribution internationales entre le Canada, le Sud global et l'Afrique. Elle est issue de la résidence Voix Invisibles (Centre Phi) et du programme « Projections! » d'Orizon 9.",
+        bio: "Productrice indépendante d'origine rwandaise établie à Montréal, elle se spécialise en fiction et en documentaire. Passionnée par les récits africains et diasporiques, elle met en lumière, à travers son travail, la richesse des cultures et des expériences humaines. Résolue à bâtir des ponts entre les continents, elle se consacre activement aux occasions de coproduction et de distribution internationales entre le Canada, le Sud global et l'Afrique. Elle est issue du programme « Projections! » d'Orizon 9.",
       },
       {
         name: "Richard Mugwaneza",

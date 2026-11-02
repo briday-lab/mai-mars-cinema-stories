@@ -76,7 +76,7 @@ function Index() {
       </section>
 
       <section className="mx-auto max-w-4xl px-6 py-32 text-center md:py-48">
-        <p className="eyebrow text-primary">Montréal · Kinshasa · Dakar · Johannesburg</p>
+        <p className="eyebrow text-primary">{t.home.regions}</p>
         <p className="mt-8 font-display text-3xl leading-snug text-foreground md:text-5xl">
           {t.home.statement}
         </p>
